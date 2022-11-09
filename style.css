@@ -1,0 +1,39 @@
+.box {
+    border:1px solid black;
+    width:25px;
+    display:inline-block;
+    box-sizing: border-box;
+    height: 25px;
+}
+
+#container {
+    width: 500px;
+    height: 500px;
+}
+
+#container>div {
+    height: 25px;
+}
+
+
+body {
+    display:flex;
+    justify-content: center;
+    padding-top: 50px;
+}
+
+/*.box:hover {
+    background-color: black;
+}*/
+
+
+
+
+.boxList {
+    border: 1px solid red;
+    border:1px solid black;
+    width:25px;
+    display:inline-block;
+    box-sizing: border-box;
+    height: 25px;
+}
