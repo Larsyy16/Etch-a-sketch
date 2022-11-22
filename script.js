@@ -15,6 +15,14 @@ function createGrid(numPerBox) {
             
         }
     }
+const eachBox = document.querySelectorAll('.box');
+
+
+eachBox.forEach(box => {
+    box.addEventListener("mouseover",(event) => {
+        event.target.style.backgroundColor="black";
+    }, false);
+            });
 
 }
 let grid= createGrid(8);
@@ -24,14 +32,7 @@ let grid= createGrid(8);
 
 
 
-const eachBox = document.querySelectorAll('.box');
 
-
-eachBox.forEach(box => {
-    box.addEventListener("mouseover",(event) => {
-        event.target.style.backgroundColor="yellow";
-    }, false);
-            });
 /*generate multiple divs*/
 
 
@@ -42,11 +43,25 @@ while (container.firstChild) {
 nums = parseInt(document.querySelector('#numInput').value);
 grid= createGrid(nums);
 
-const eachBox = document.querySelectorAll('.box');
+/*const eachBox = document.querySelectorAll('.box');
 
 eachBox.forEach(box => {
     box.addEventListener("mouseover",(event) => {
-        event.target.style.backgroundColor="yellow";
+        event.target.style.backgroundColor="black";
         }, false);
-    });
+    });*/
 }
+
+function rainbow() {
+    const eachBox = document.querySelectorAll('.box');
+
+    const colors = ["#3d207f","#6399e7","#adce37","#fdcd38","#e87452"]
+    let currentColor = 0;
+    eachBox.forEach(box => {
+        box.addEventListener("mouseover",(event) => {
+            event.target.style.backgroundColor= colors[currentColor]
+            currentColor >= colors.length ? currentColor =0 : currentColor++
+            }, false);
+        });
+}
+
