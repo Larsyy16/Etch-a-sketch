@@ -65,3 +65,10 @@ function rainbow() {
         });
 }
 
+function btnClear() {
+    let elements = document.getElementsByClassName('box');
+    for (let i=0; i <elements.length; i++) {
+        elements[i].style.backgroundColor = "lightgray";
+    }
+
+    }
