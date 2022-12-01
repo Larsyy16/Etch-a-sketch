@@ -11,6 +11,11 @@ function createGrid(numPerBox) {
             square.className = 'box';
             row.appendChild(square);
 
+            /*if (numPerBox > 100) {
+                alert('Please choose lower number');
+
+            }*/
+
             
             
         }
@@ -24,6 +29,7 @@ eachBox.forEach(box => {
     }, false);
             });
 
+    
 }
 let grid= createGrid(8);
 
@@ -50,6 +56,11 @@ eachBox.forEach(box => {
         event.target.style.backgroundColor="black";
         }, false);
     });*/
+    /*if (nums > 100) {
+        
+        throw new Error('Number too high');
+    }*/
+    
 }
 
 function rainbow() {
@@ -72,3 +83,35 @@ function btnClear() {
     }
 
     }
+
+
+    var numElement = document.querySelector('input[type="number"]')
+    numElement.addEventListener('change', assignMax);
+    numElement.addEventListener('input', assignMax);
+    numElement.addEventListener('keyup', assignMax);
+    numElement.addEventListener('paste', assignMax);
+
+
+
+function assignMax() {
+        if (this.max) this.value = Math.min(parseInt(this.max), parseInt(this.value) || 0);
+        if (this.min) this.value = Math.min(parseInt(this.max), parseInt(this.value)|| 0);
+    }
+
+
+
+function shader() {
+    const eachBox = document.querySelectorAll('.box');
+
+
+    eachBox.forEach(box => {
+        const cellCh=box;
+        cellCh.count = 0;
+    box.addEventListener("mouseover",(event) => {
+        event.target.count += 1;
+        event.target.style.opacity = 0.01* event.target.count;
+    }, false);
+            });
+    }
+ /*make 10% blacker each time through array
+ -can't be random*/
